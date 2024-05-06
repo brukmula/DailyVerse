@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Bible Quiz</title>
+
+
+    <link rel="icon" type="image/x-icon" href="public/images/CherithLogo.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Khand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="public/stylesheets/main.css">
+</head>
+<body>
+
+<div class="titleAndIntro">
+    <h1> <img src="public/images/CherithLogo.jpg"> Daily Bible Verse Quiz</h1>
+    <p id="dateTime" class = "currentDate"></p>
+</div>
+<nav>
+
+    <select id="difficulty" onchange="loadDataAndUpdateText()">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard" selected = "selected">Hard</option>
+        <option value="complete">Complete</option>
+    </select>
+
+    <button id ="helpButton" onclick="callInstructions()">Instructions</button>
+</nav>
+
+<div class = "mainContent">
+    <p class="reference" id="reference"></p>
+    <div id="sentence" class="sentence"></div>
+    <button onclick="checkAnswers()">Check</button>
+    <button id="peekButton">Look at Verse</button>
+
+</div>
+
+<div id="modal" class="modal">
+    <div id="modalContent" class="modalContent"></div>
+</div>
+
+<div id="instructions" class="instructions">
+    <div id="instructionsContent" class="instructionsContent"></div>
+</div>
+
+<div id = "peekWindow" class = "peekWindow">
+    <p class="peekVerse" id="peekVerse"></p>
+    <p class="peekRef" id="peekRef"></p>
+</div>
+
+<script src="public/scripts/updateDate.js"></script>
+<script src="public/scripts/main.js"></script>
+<script src="public/scripts/peek.js"></script>
+<script src="public/scripts/modalAndInstructions.js"></script>
+
+</body>
+</html>

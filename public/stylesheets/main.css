@@ -1,0 +1,221 @@
+body, html {
+    background-color: #f0f0f0;
+    height: 100%;
+    margin: 0;
+    font-family: Dosis, sans-serif;
+}
+
+nav {
+    border: 2px solid #ccc;
+    color: black;
+    padding: 5px;
+    text-align: right;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.currentDate {
+    font-size: x-large;
+    margin: 10px;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded slider */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.sentence {
+    display: flex;
+    flex-wrap: wrap; /* This allows items to wrap onto the next line */
+    gap: 10px; /* Optional: Adds space between items */
+    justify-content: center;
+    text-align: center;
+    padding-left: 25%;
+    padding-right: 25%;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.titleAndIntro {
+    text-align: left;
+}
+
+.mainContent {
+    padding: 50px;
+    text-align: center;
+}
+
+.reference {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+button, select  {
+    font-family: Dosis, sans-serif;
+    font-size: 20px;
+    padding: 5px;
+    margin: 15px;
+    border-radius: 5px;
+    border-color: #185ff6;
+    background-color: #185ff6;
+    color: white;
+}
+
+button:hover{
+    border: black 4px;
+}
+
+input {
+    margin: 0 5px;
+    border-radius: 6px;
+    font-size: 38px;
+    background-color: #F3D8C7;
+}
+
+textarea{
+    font-family: Dosis, sans-serif;
+    margin: 0 5px;
+    border-radius: 6px;
+    font-size: 38px;
+    background-color: #F3D8C7;
+}
+
+.full-sentence{
+    height: 400px;
+    width: 800px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; /* Set to the top of the viewport */
+    left: 0; /* Set to the left of the viewport */
+    width: 100%; /* Cover the entire width of the viewport */
+    height: 100%; /* Cover the entire height of the viewport */
+    background: linear-gradient(to right, #cccccc 0%, #F3D8C7 100%); /* A cool gradient background */
+    color: black;
+    border: 1px solid #fff;
+    border-radius: 10px; /* Adding rounded corners */
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.3); /* More dynamic shadow */
+    z-index: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions for transform & opacity */
+    transform: scale(0.95); /* Slightly scaled down to grow on hover */
+}
+
+.modal h1{
+    font-size: 40px;
+}
+
+
+.modalContent {
+    margin: 100px;
+    padding: 50px;
+    text-align: center;
+}
+
+.instructions {
+    display: none;
+    position: fixed;
+    top: 0; /* Set to the top of the viewport */
+    left: 35%; /* Set to the left of the viewport */
+    width: 30%; /* Cover the entire width of the viewport */
+    height: 100%; /* Cover the entire height of the viewport */
+    background: linear-gradient(to right, #cccccc 0%, #F3D8C7 100%); /* A cool gradient background */
+    color: black;
+    border: 1px solid #fff;
+    border-radius: 10px; /* Adding rounded corners */
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.3); /* More dynamic shadow */
+    z-index: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions for transform & opacity */
+    transform: scale(0.95); /* Slightly scaled down to grow on hover */
+}
+
+.instructionsContent {
+    text-align: center;
+}
+
+.instructionsContent p{
+    font-size: 30px;
+}
+
+.peekWindow {
+    display: none;
+    position: fixed;
+    padding: 20px;
+    background: linear-gradient(to right, #334455 0%, #445566 100%); /* A cool gradient background */
+    color: white; /* Changing text color to white for better contrast */
+    border: 1px solid #fff;
+    border-radius: 10px; /* Adding rounded corners */
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.3); /* More dynamic shadow */
+    z-index: 1;
+    top: 40%;
+    left: 25%;
+    width: 50%;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions for transform & opacity */
+    transform: scale(0.95); /* Slightly scaled down to grow on hover */
+}
+
+.peekVerse {
+    font-size: 40px;
+    user-select: none;
+}
+
+.peekRef {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
