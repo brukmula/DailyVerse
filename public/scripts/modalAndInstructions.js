@@ -42,12 +42,18 @@ function modalIntro(){
 
    // Set Modal HTML
    modalContent.innerHTML =   `
-    <div class="introContent">
-      <h1>Welcome to the Daily Bible Quiz!</h1>
-      <h2>Practice your scripture memorization skills.</h2>
-      <button onclick="removeModal(); callInstructions();">Instructions</button>
-      <button onclick="removeModal()">Get Started</button>
+    <div class="modalContent">
+    <h1>Welcome to the Daily Bible Quiz!</h1>
+    <p>Enhance your understanding and memorization of scriptures with our fun and interactive daily quiz.</p>
+    <div>
+        <button onclick="removeModal(); callInstructions();">Instructions</button>
+        <button onclick="removeModal()">Get Started</button>
     </div>
+    <!-- The text is set in the main.js file-->
+    <h2 id ="modalVerseReference"></h2>
+    <p id="modalVerseText"></p>
+    
+</div>
    `
 }
 
@@ -99,7 +105,58 @@ function setInstructionsContent (){
    // HTML for instructions window
    instructionsContent.innerHTML = `
       <h1> Instructions</h1>
-      <p>This is where the instructions will belong.</p>
+      <p>Complete the Bible Verse to win!</p>
+      <p>There are 4 levels of difficulty, the harder the difficulty the more words that need to be filled.
+      </p>
+      
+      <ul>
+        <li><b>Easy:</b> A third of the words </li>
+        <li><b>Medium:</b> Half of the words </li>
+        <li><b>Hard:</b> All the words </li>
+        <li><b>Complete:</b> The entire verse</li>
+      </ul>
+     
+      <p>The default difficulty is set to <b>Hard</b> ,but you can adjust this by clicking on the select menu that looks
+       like this 
+         <select>
+         <option>Easy</option>
+         <option>Medium</option>
+         <option>Hard</option>
+         <option>Complete</option>
+         </select>
+      </p>
+      
+      <p>Once you selected your difficulty level, you can begin typing in your answer.</p>
+      <p>The verse of the day's reference will appear above the input area, but if you need to look at it before 
+      starting just hit this button: <button>Look At Verse</button> </p>
+      
+      <p>This will reveal today's verse in a popup window, feel free to click on it whenever you get stuck</p>
+      
+      <p>If you are playing <b>Easy,</b> <b>Medium,</b> or <b>Hard</b> difficulty, you will have to enter each missing word one by one.</p>
+      <p>To save you
+      some time (especially on the Hard difficulty) just click tab on your keyboard everytime you want to go to the next missing 
+      word box.
+      </p>
+      
+      <p> The <b>Complete</b> difficulty is the only one that requires you to enter the entire verse instead of one word
+      at a time. </p>
+      
+      <p>To see if you are correct, click on the <button>Check</button> button</p>
+      
+      <p>This button will show you all the correct and incorrect responses in your boxes.</p>
+      
+      <p>All the correct input's will turn green like so: 
+      <input style="background-color: #58fb50; width: 70px; ">
+      </p>
+      
+      <p>All the incorrect input's will turn red like so: 
+      <input style="background-color: #fb5750; width: 70px; ">
+      </p>
+      
+      <p>On the <b>Complete</b> difficulty setting, you must have the entire verse correct to get a green box. Punctuation 
+      and capitalization are not checked.
+      </p>
+      
    `;
 }
 

@@ -142,38 +142,42 @@ textarea{
 .modal {
     display: none;
     position: fixed;
-    top: 0; /* Set to the top of the viewport */
-    left: 0; /* Set to the left of the viewport */
-    width: 100%; /* Cover the entire width of the viewport */
-    height: 100%; /* Cover the entire height of the viewport */
-    background: linear-gradient(to right, #cccccc 0%, #F3D8C7 100%); /* A cool gradient background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #cccccc, #F3D8C7);
     color: black;
-    border: 1px solid #fff;
-    border-radius: 10px; /* Adding rounded corners */
-    box-shadow: 0px 8px 15px rgba(0,0,0,0.3); /* More dynamic shadow */
-    z-index: 1;
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions for transform & opacity */
-    transform: scale(0.95); /* Slightly scaled down to grow on hover */
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    z-index: 1000; /* Ensuring it's sufficiently high */
+    transition: transform 0.3s, opacity 0.3s; /* Smooth transitions */
+    transform: scale(0.95);
+}
+
+.modalContent {
+    margin: 10px auto; /* Centered horizontally */
+    padding: 30px;
+    text-align: center;
+    width: 80%; /* Optimally use the modal's width */
+    max-width: 600px; /* Limit maximum width for larger screens */
+}
+
+.modalContent p{
+    font-size: 30px;
 }
 
 .modal h1{
     font-size: 40px;
 }
 
-
-.modalContent {
-    margin: 100px;
-    padding: 50px;
-    text-align: center;
-}
-
 .instructions {
     display: none;
     position: fixed;
-    top: 0; /* Set to the top of the viewport */
-    left: 35%; /* Set to the left of the viewport */
-    width: 30%; /* Cover the entire width of the viewport */
-    height: 100%; /* Cover the entire height of the viewport */
+    top: 0;
+    left: 25%; /* Adjusted to keep the box centered when width is increased */
+    width: 50%; /* Increased width */
+    height: 80%; /* Cover the entire height of the viewport */
     background: linear-gradient(to right, #cccccc 0%, #F3D8C7 100%); /* A cool gradient background */
     color: black;
     border: 1px solid #fff;
@@ -182,6 +186,7 @@ textarea{
     z-index: 1;
     transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions for transform & opacity */
     transform: scale(0.95); /* Slightly scaled down to grow on hover */
+    overflow-y: auto; /* Enables vertical scrolling */
 }
 
 .instructionsContent {
@@ -189,8 +194,14 @@ textarea{
 }
 
 .instructionsContent p{
-    font-size: 30px;
+    font-size: 25px;
 }
+
+.instructionsContent li{
+    text-align: left;
+    font-size: 25px;
+}
+
 
 .peekWindow {
     display: none;

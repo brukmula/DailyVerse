@@ -1,6 +1,6 @@
 const currentDay = document.getElementById('dateTime');
+
 let verseOfTheDay; // Will store the verse of the day
-let isHelpModeActive = false; //Track whether help mode is active
 
 // When page is loaded, call function that loads the data and updates the text
 document.addEventListener("DOMContentLoaded", function() {
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //Check schedule for today's verse of the day
 function updateVerse(){
-    fetch('public/jsonFiles/schedule.json')
+    fetch('/jsonFiles/schedule.json')
         .then(response => response.json())
         .then(data => {
             const currentDayData = data.find(item => item.date === currentDay.innerText);
@@ -22,13 +22,16 @@ function updateVerse(){
 
 
 function loadDataAndUpdateText() {
-    fetch('public/jsonFiles/verses.json') // Adjust the path to your actual JSON file location
+    fetch('/jsonFiles/verses.json') // Adjust the path to your actual JSON file location
         .then(response => response.json())
         .then(data => {
             const difficulty = document.getElementById("difficulty").value;
             const reference = document.getElementById("reference");
             const peekVerse = document.getElementById('peekVerse');
             const peekRef = document.getElementById('peekRef');
+
+            const modalVerseReference = document.getElementById('modalVerseReference');
+            const modalVerseText = document.getElementById('modalVerseText');
 
             // Find the sentenceData with the matching reference
             const sentenceData = data.find(item => item.reference === verseOfTheDay);
@@ -37,6 +40,10 @@ function loadDataAndUpdateText() {
             reference.innerHTML = sentenceData.reference;
             peekVerse.innerText = sentenceData.sentence + "\n";
             peekRef.innerText = sentenceData.reference;
+
+            //Set Modal content to today's verse
+            modalVerseReference.innerText = "Today's Verse: " + sentenceData.reference;
+            modalVerseText.innerText = sentenceData.sentence;
 
             updateText(sentenceData.sentence, difficulty);
         })
