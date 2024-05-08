@@ -121,7 +121,7 @@ function setInstructionsContent (){
          <select>
          <option>Easy</option>
          <option>Medium</option>
-         <option>Hard</option>
+         <option selected = "selected">Hard</option>
          <option>Complete</option>
          </select>
       </p>
