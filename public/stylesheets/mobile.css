@@ -1,0 +1,56 @@
+/* Basic adjustments for mobile devices */
+@media (max-width: 768px) {
+    body, html {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    .nav {
+        text-align: center; /* Center alignment for easier navigation */
+    }
+
+    .switch {
+        width: 40px; /* Smaller switch for mobile */
+        height: 24px;
+    }
+
+    .slider:before {
+        width: 18px; /* Smaller slider button */
+        height: 18px;
+    }
+
+    .currentDate {
+        font-size: large; /* Adjusted font size for mobile */
+    }
+
+    .sentence {
+        padding-left: 10%; /* Reduced padding for narrower screens */
+        padding-right: 10%;
+        font-size: 24px; /* Smaller font size for easier reading */
+    }
+
+    .titleAndIntro, .mainContent, .reference {
+        padding: 20px; /* Less padding to increase space */
+        text-align: center; /* Center alignment for consistency */
+    }
+
+    button, select, input, textarea {
+        font-size: 16px; /* Smaller font size for form elements */
+    }
+
+    .full-sentence {
+        height: 200px; /* Smaller text area height */
+        width: 100%; /* Full width for better usability */
+    }
+
+    .modal, .instructions, .peekWindow {
+        left: 0;
+        width: 100%; /* Full width for modal and overlays */
+        top: 0;
+        height: 100%; /* Full screen height */
+    }
+
+    .modalContent, .instructionsContent, .peekVerse, .peekRef {
+        width: 90%; /* Allow some margin */
+        max-width: none; /* Override max-width settings */
+    }
+}
