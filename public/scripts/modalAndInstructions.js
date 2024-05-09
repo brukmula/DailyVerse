@@ -153,6 +153,8 @@ function setInstructionsContent (){
       <input style="background-color: #fb5750; width: 70px; ">
       </p>
       
+      <p>To clear all the incorrect or empty inputs, click on the <button>Clear</button> button</p>
+      
       <p>On the <b>Complete</b> difficulty setting, you must have the entire verse correct to get a green box. Punctuation 
       and capitalization are not checked.
       </p>

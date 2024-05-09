@@ -207,6 +207,24 @@ function isCloseMatch(input, answer){
     return false;
 }
 
+// Function to empty inputs if user hits clear. Only clears non-green inputs
+function clearInputs() {
+    // Select all input elements you expect might be checked (those that are part of the quiz)
+    const inputs = document.querySelectorAll('input');
+
+    // Loop through each input element
+    inputs.forEach(input => {
+        // Check if the background color is not green
+        if (input.style.backgroundColor !== "rgb(88, 251, 80)") {
+            // Clear the input value
+            input.value = '';
+            // Optionally, reset other styles if needed
+            input.style.backgroundColor = ''; // Reset background color
+        }
+    });
+}
+
+
 // Remove punctuation, spaces, and convert string lower case
 function normalizeString(str){
     return str.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").toLowerCase();
