@@ -51,7 +51,7 @@ function modalIntro(){
     </div>
     <!-- The text is set in the main.js file-->
     <h2 id ="modalVerseReference"></h2>
-    <p id="modalVerseText"></p>
+    <p id="modalVerseText" class="modalVerseText"></p>
     
 </div>
    `

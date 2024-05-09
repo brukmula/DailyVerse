@@ -167,6 +167,11 @@ textarea{
     font-size: 30px;
 }
 
+.modalVerseText{
+    font-size: 40px;
+    font-weight: bold;
+}
+
 .modal h1{
     font-size: 40px;
 }
