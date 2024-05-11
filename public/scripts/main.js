@@ -114,6 +114,7 @@ function createInput(word, className, size) {
     input.type = 'text';
     input.size = size;
     input.setAttribute('data-answer', normalizeString(word));
+    input.setAttribute('data-original', word); // Save the original word for display
     input.setAttribute('class', className);
 
     // Create tooltip for spelling hints
@@ -206,6 +207,39 @@ function isCloseMatch(input, answer){
     }
     return false;
 }
+
+function highlightWords() {
+    const wordInput = document.getElementById('wordInput');
+    const wordToCheck = normalizeString(wordInput.value); // Normalize the input for comparison
+    const sentenceInputs = document.querySelectorAll('input.blank');
+
+    let found = false;
+
+    sentenceInputs.forEach(input => {
+        const word = normalizeString(input.getAttribute('data-answer')); // Normalized word for comparison
+        if (word === wordToCheck) {
+            input.style.backgroundColor = 'green';
+            input.value = input.getAttribute('data-original'); // Set the input value to the original text
+            input.readOnly = true; // Optionally set to readOnly if you want to lock correct answers
+            found = true;
+        }
+    });
+
+    // Clear the input box after checking
+    wordInput.value = '';
+
+    // Optionally, provide feedback if the word is not found in the sentence
+    if (!found) {
+        alert('Word not found in the sentence.');
+    }
+}
+
+document.getElementById('wordInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        highlightWords();
+    }
+});
+
 
 // Function to empty inputs if user hits clear. Only clears non-green inputs
 function clearInputs() {

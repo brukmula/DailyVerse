@@ -235,3 +235,26 @@ textarea{
     font-weight: bold;
     font-size: 20px;
 }
+
+/* Base styling for the container */
+.oneWordInput {
+    padding: 20px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the input within the container */
+.oneWordInput input[type="text"] {
+    flex-grow: 1; /* Allow input to take up as much space as possible */
+    margin-right: 10px; /* Space between input and button */
+    padding: 10px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px;
+    font-size: 16px; /* Larger font size for better readability */
+}
+
+/* Add a hover effect to the button */
+.oneWordInput button:hover {
+    background-color: #0056b3; /* A darker shade of the button color on hover */
+}

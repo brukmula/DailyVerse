@@ -134,8 +134,8 @@ function setInstructionsContent (){
       
       <p>If you are playing <b>Easy,</b> <b>Medium,</b> or <b>Hard</b> difficulty, you will have to enter each missing word one by one.</p>
       <p>To save you
-      some time (especially on the Hard difficulty) just click tab on your keyboard everytime you want to go to the next missing 
-      word box.
+      some time (especially on the Hard difficulty) there is a small box at the bottom of the screen that will let you 
+      type the words one at a time, just click the button next to it or hit enter to see if the word is in the sentence.
       </p>
       
       <p> The <b>Complete</b> difficulty is the only one that requires you to enter the entire verse instead of one word
