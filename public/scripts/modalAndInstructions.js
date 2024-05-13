@@ -89,15 +89,6 @@ function callInstructions() {
    }, 0); // Execute after the current call stack clears
 }
 
-// When user gets it correct, change modal to display win screen
-function allCorrect (){
-   loadModal();
-
-   modal.style.height = "50%";
-   modal.style.width = "50%";
-
-}
-
 // Inner Text for Instructions window
 function setInstructionsContent (){
    const instructionsContent = document.getElementById('instructionsContent');
@@ -160,5 +151,38 @@ function setInstructionsContent (){
       </p>
       
    `;
+}
+
+// Set HTML elements for win screen
+function callWinScreen(){
+   const winScreen = document.getElementById('winScreen');
+   const winScreenContent = document.getElementById('winContent');
+
+   winScreen.style.display = 'block';
+
+   winScreenContent.innerHTML = `
+      <p> You Got it! </p>
+      <p class="winMessage">Try a different difficulty to challenge yourself, or come back tomorrow for a new verse!</p>
+   `
+
+   // Prevent adding the listener multiple times
+   if(winScreen.__winScreenClickListenerAdded) return;
+
+   // Delay the attachment of the click listener to the document
+   setTimeout(() => {
+      document.addEventListener('click', function (event){
+         const isClickedInsideWinScreen = winScreen.contains(event.target);
+
+         if(!isClickedInsideWinScreen){
+            winScreen.style.display ='none';
+
+            // Remove the event listener
+            document.removeEventListener('click', this);
+            winScreen.__winScreenClickListenerAdded = false;
+         }
+      });
+
+      winScreen.__winScreenClickListenerAdded = true;
+   }, 0);
 }
 

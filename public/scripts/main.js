@@ -88,6 +88,7 @@ function updateText(sentence, difficulty) {
     }
 }
 
+// Function when user selects complete option
 function createCompleteVerseInput(sentence){
     const textarea = document.createElement('textarea');
     textarea.setAttribute('data-answer', normalizeString(sentence));
@@ -188,7 +189,7 @@ function checkAnswers() {
     });
 
     if (allTrue) {
-        allCorrect();
+        callWinScreen(); // Function in modalAndInstructions.js
         console.log('TRUE - All individual words are correct');
     }
 }
@@ -214,14 +215,20 @@ function highlightWords() {
     const sentenceInputs = document.querySelectorAll('input.blank');
 
     let found = false;
+    let allCorrect = true; // Assume all are correct unless found otherwise
 
-    sentenceInputs.forEach(input => {
+    sentenceInputs.forEach((input, index) => {
         const word = normalizeString(input.getAttribute('data-answer')); // Normalized word for comparison
         if (word === wordToCheck) {
-            input.style.backgroundColor = 'green';
+            input.style.backgroundColor = '#58fb50';
             input.value = input.getAttribute('data-original'); // Set the input value to the original text
-            input.readOnly = true; // Optionally set to readOnly if you want to lock correct answers
+            input.readOnly = true; // Set to readOnly if you want to lock correct answers
             found = true;
+        }
+
+        // Check if any input is not green, indicating that not all words are correct
+        if (input.style.backgroundColor !== 'rgb(88, 251, 80)'){
+            allCorrect = false;
         }
     });
 
@@ -232,8 +239,12 @@ function highlightWords() {
     if (!found) {
         alert('Word not found in the sentence.');
     }
-}
 
+    // If all inputs are correct show winScreen (found in modalAndInstructions.js)
+    if(allCorrect) {
+        callWinScreen();
+    }
+}
 document.getElementById('wordInput').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         highlightWords();
