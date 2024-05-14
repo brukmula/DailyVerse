@@ -157,7 +157,7 @@ textarea{
 
 .modalContent {
     margin: 10px auto; /* Centered horizontally */
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     width: 80%; /* Optimally use the modal's width */
     max-width: 600px; /* Limit maximum width for larger screens */
