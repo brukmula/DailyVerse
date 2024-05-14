@@ -143,8 +143,8 @@ textarea{
     display: none;
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 25%;
+    width: 50%;
     height: 100%;
     background: linear-gradient(to right, #cccccc, #F3D8C7);
     color: black;
@@ -164,7 +164,7 @@ textarea{
 }
 
 .modalContent p{
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .modalVerseText{
